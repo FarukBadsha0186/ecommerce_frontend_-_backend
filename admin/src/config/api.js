@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   //baseURL: 'http://localhost:5000/api/v1/',
-  baseURL: 'ttps://ecommerce-8lhe.onrender.com/api/v1/',
+  baseURL: 'https://admin-panel-18zu.onrender.com/api/v1/',
   
   timeout: 10000,
   headers: {
