@@ -250,24 +250,26 @@ app.use(cookieParser());
 
 // CORS Configuration
 app.use(
-  cors({
-    origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000"],
+  // cors({
+  //   origin: ["http://localhost:5173", "http://localhost:5174", "http://localhost:3000"],
+  //   credentials: true,
+  //   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  //   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  // })
+cors({
+    origin: "*",
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
-  })
+})
+  
 );
 
 // Body Parser
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
-// Static Files (Uploaded images serve করার জন্য)
-//app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
-
-
-// Security Middlewares
 app.use(
   helmet.contentSecurityPolicy({
     useDefaults: true,

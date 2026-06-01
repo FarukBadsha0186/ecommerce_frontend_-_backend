@@ -1,14 +1,16 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5000/api/v1/',
+  //baseURL: 'http://localhost:5000/api/v1/',
+  baseURL: 'ttps://ecommerce-8lhe.onrender.com/api/v1/',
+  
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json'
   }
 });
 
-// Request Interceptor - Token যোগ করার জন্য
+
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('adminToken');
