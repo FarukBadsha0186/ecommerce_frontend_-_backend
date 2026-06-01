@@ -17,7 +17,7 @@ import PaymentFail from './pages/PaymentFail';
 import PaymentCancel from './pages/PaymentCancel';
 import PaymentMock from './pages/PaymentMock';
 
-// ডাইনামিক ইম্পোর্ট - ফাইল না থাকলে error দেখাবে না
+
 let MyOrders, OrderDetails, TrackOrder;
 
 try {
