@@ -57,7 +57,7 @@ function AllProducts() {
                 // যদি URL সম্পূর্ণ না হয়, তাহলে base URL যোগ করুন
                 if (img && !img.startsWith('http://') && !img.startsWith('https://')) {
                   // ব্যাকএন্ড URL - আপনার পোর্ট অনুযায়ী পরিবর্তন করুন
-                  return `http://localhost:5000${img.startsWith('/') ? img : '/' + img}`;
+                  return `ecommerce-8lhe.onrender.com${img.startsWith('/') ? img : '/' + img}`;
                 }
                 return img;
               })
