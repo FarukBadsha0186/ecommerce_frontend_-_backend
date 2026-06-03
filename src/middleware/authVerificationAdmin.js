@@ -1,7 +1,7 @@
 const { DecodeToken } = require("../utility/tokenHelper");
 
 module.exports = (req, res, next) => {
-    // Header থেকে token নিন
+    
     let token = req.headers.authorization?.split(' ')[1];
 
     if (!token) {

@@ -1714,6 +1714,7 @@ const brandModel = require("../models/brandModel");
 const fs = require('fs');
 const path = require('path');
 const ObjectId = mongoose.Types.ObjectId;
+const cloudinary = require('cloudinary').v2;
 
 // ==================== CREATE PRODUCT (with file upload) ====================
 exports.createProduct = async (req, res) => {
@@ -1806,7 +1807,8 @@ exports.createProduct = async (req, res) => {
             console.log(`Processing ${req.files.length} uploaded files`);
             imageUrls = req.files.map(file => {
                 // Return relative path for static serving
-                return `/uploads/products/${file.filename}`;
+              //  return `/uploads/products/${file.filename}`;
+              return file.path;
             });
         }
 
@@ -2295,7 +2297,9 @@ exports.productUpdate = async (req, res) => {
         if (req.files && req.files.length > 0) {
             console.log(`Processing ${req.files.length} new uploaded files`);
             const newImages = req.files.map(file => {
-                return `/uploads/products/${file.filename}`;
+              //  return `/uploads/products/${file.filename}`;
+              return file.path;
+            
             });
             imageUrls = [...imageUrls, ...newImages];
         }
@@ -2435,16 +2439,27 @@ exports.productDelete = async (req, res) => {
         }
 
         // Delete associated images from server
-        if (product.images && product.images.length > 0) {
-            product.images.forEach(imageUrl => {
-                const filename = imageUrl.split('/').pop();
-                const filePath = path.join(__dirname, '../uploads/products', filename);
-                if (fs.existsSync(filePath)) {
-                    fs.unlinkSync(filePath);
-                    console.log("Deleted image:", filePath);
-                }
-            });
+        // if (product.images && product.images.length > 0) {
+        //     product.images.forEach(imageUrl => {
+        //         const filename = imageUrl.split('/').pop();
+        //         const filePath = path.join(__dirname, '../uploads/products', filename);
+        //         if (fs.existsSync(filePath)) {
+        //             fs.unlinkSync(filePath);
+        //             console.log("Deleted image:", filePath);
+        //         }
+        //     });
+        // }
+if (product.images && product.images.length > 0) {
+    product.images.forEach(imageUrl => {
+        const filename = imageUrl.split('/').pop();
+        const filePath = path.join(__dirname, '../uploads/products', filename);
+        if (fs.existsSync(filePath)) {
+            fs.unlinkSync(filePath);
         }
+    });
+}
+
+
 
         const deleted = await productModel.findByIdAndDelete(id);
 
