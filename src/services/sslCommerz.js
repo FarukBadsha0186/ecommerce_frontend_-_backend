@@ -32,9 +32,9 @@ exports.initiatePayment = async (req, res) => {
     payment.setProductProfile('general');
     
     // Set success and cancel URLs
-    payment.setSuccessUrl(`http://localhost:5000/api/v1/payment/success`);
-    payment.setCancelUrl(`http://localhost:5000/api/v1/payment/cancel`);
-    payment.setFailedUrl(`http://localhost:5000/api/v1/payment/fail`);
+    payment.setSuccessUrl(`https://ecommerce-8lhe.onrender.com/api/v1/payment/success`);
+    payment.setCancelUrl(`https://ecommerce-8lhe.onrender.com/api/v1/payment/cancel`);
+    payment.setFailedUrl(`https://ecommerce-8lhe.onrender.com/api/v1/payment/fail`);
     
     const paymentResponse = await payment.paymentInit();
     
