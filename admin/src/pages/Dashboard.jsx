@@ -19,15 +19,30 @@ function Dashboard() {
     { title: "Total Brands", value: 0, color: "text-teal-400", key: "totalBrands", icon: "🏷️" },
   ]);
 
+  // useEffect(() => {
+  //   const token = localStorage.getItem('adminToken');
+  //   if (!token) {
+  //     navigate('/login');
+  //     return;
+  //   }
+  //   fetchDashboardStats();
+  // }, []);
+
   useEffect(() => {
     const token = localStorage.getItem('adminToken');
     if (!token) {
-      navigate('/login');
-      return;
+        navigate('/login');
+        return;
     }
+    
+    // ✅ Guest হলে API call করবে না
+    if (token === 'guest_demo') {
+        setLoading(false);
+        return;
+    }
+    
     fetchDashboardStats();
-  }, []);
-
+}, []);
   const fetchDashboardStats = async () => {
     try {
       setLoading(true);
