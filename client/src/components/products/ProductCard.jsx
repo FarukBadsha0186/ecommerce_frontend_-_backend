@@ -26,7 +26,12 @@ const ProductCard = ({ product }) => {
   };
 
   // Get first image
- const productImage = `http://localhost:5000${product.images[0]}`;
+// const productImage = `http://localhost:5000${product.images[0]}`;
+const productImage = product.images && product.images[0] 
+    ? product.images[0].startsWith('http') 
+        ? product.images[0]  // Cloudinary URL — directly use করো
+        : `https://ecommerce-8lhe.onrender.com${product.images[0]}`
+    : 'https://via.placeholder.com/300x200';
 
   // Get category name
   const categoryName = product.category && product.category.length > 0 
