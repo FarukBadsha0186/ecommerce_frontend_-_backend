@@ -44,7 +44,11 @@ const LoginPage = () => {
       setLoading(false);
     }
   };
-
+const handleGuestLogin = () => {
+    localStorage.setItem('adminToken', 'guest_demo');
+    localStorage.setItem('isGuest', 'true');
+    navigate("/dashboard", { replace: true });
+};
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-900">
       <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-96">
@@ -88,6 +92,15 @@ const LoginPage = () => {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
+          <div className="mt-3 text-center text-gray-400 text-sm">or</div>
+
+<button
+    type="button"
+    onClick={handleGuestLogin}
+    className="w-full mt-2 bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded transition"
+>
+    👀 Guest Login (Demo)
+</button>
         </form>
       </div>
     </div>
