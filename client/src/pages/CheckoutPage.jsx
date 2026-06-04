@@ -158,7 +158,7 @@
       
 //       // ✅ Call the order create API
 //       const response = await axios.post(
-//         'http://localhost:5000/api/v1/order/create',
+//         'https://ecommerce-8lhe.onrender.com/api/v1/order/create',
 //         orderData,
 //         {
 //           headers: {
@@ -192,7 +192,7 @@
           
 //           try {
 //             await axios.post(
-//               'http://localhost:5000/api/v1/cart/Create',
+//               'https://ecommerce-8lhe.onrender.com/api/v1/cart/Create',
 //               clearItemData,
 //               {
 //                 headers: {
@@ -600,7 +600,7 @@ const CheckoutPage = () => {
     
     try {
       await axios.post(
-        'http://localhost:5000/api/v1/cart/Create',
+        'https://ecommerce-8lhe.onrender.com/api/v1/cart/Create',
         {
           product_id: item.product_id,
           product_name: item.name,
@@ -626,7 +626,7 @@ const CheckoutPage = () => {
     const user_id = getUserId();
     
     const response = await axios.post(
-      'http://localhost:5000/api/v1/order/create-from-cart',
+      'https://ecommerce-8lhe.onrender.com/api/v1/order/create-from-cart',
       {
         customer: customerInfo,
         paymentMethod: paymentMethod,
@@ -722,7 +722,7 @@ const CheckoutPage = () => {
       
   //     // Call the order create API
   //     const response = await axios.post(
-  //       'http://localhost:5000/api/v1/order/create',
+  //       'https://ecommerce-8lhe.onrender.com/api/v1/order/create',
   //       orderData,
   //       {
   //         headers: {
@@ -788,7 +788,7 @@ const CheckoutPage = () => {
         
 //         // অর্ডার তৈরি করুন
 //         const orderResponse = await axios.post(
-//             'http://localhost:5000/api/v1/order/create',
+//             'https://ecommerce-8lhe.onrender.com/api/v1/order/create',
 //             orderData,
 //             { headers: { 'Authorization': `Bearer ${token}` } }
 //         );
@@ -798,7 +798,7 @@ const CheckoutPage = () => {
 //             if (formData.paymentMethod !== 'cod') {
 //                 // SSL Commerze পেমেন্ট ইনিশিয়েট করুন
 //                 const paymentResponse = await axios.post(
-//                     'http://localhost:5000/api/v1/payment/initiate',
+//                     'https://ecommerce-8lhe.onrender.com/api/v1/payment/initiate',
 //                     {
 //                         orderId: orderResponse.data.orderId,
 //                         total: finalTotal,
@@ -904,7 +904,7 @@ const CheckoutPage = () => {
         
 //         // Call the order create API
 //         const orderResponse = await axios.post(
-//             'http://localhost:5000/api/v1/order/create',
+//             'https://ecommerce-8lhe.onrender.com/api/v1/order/create',
 //             orderData,  // ← এখন orderData ডিফাইন করা আছে
 //             {
 //                 headers: {
@@ -937,7 +937,7 @@ const CheckoutPage = () => {
 //             //     // SSL Commerze payment initiate
 //             //     try {
 //             //         const paymentResponse = await axios.post(
-//             //             'http://localhost:5000/api/v1/payment/initiate',
+//             //             'https://ecommerce-8lhe.onrender.com/api/v1/payment/initiate',
 //             //             {
 //             //                 orderId: newOrderId,
 //             //                 total: finalTotal,
@@ -981,7 +981,7 @@ const CheckoutPage = () => {
 //         localStorage.setItem('lastOrderId', newOrderId);
         
 //         const paymentResponse = await axios.post(
-//             'http://localhost:5000/api/v1/payment/initiate',
+//             'https://ecommerce-8lhe.onrender.com/api/v1/payment/initiate',
 //             {
 //                 orderId: newOrderId,
 //                 total: finalTotal,
@@ -1145,7 +1145,7 @@ const handleSubmit = async (e) => {
         
         // Call the order create API
         const orderResponse = await axios.post(
-            'http://localhost:5000/api/v1/order/create',
+            'https://ecommerce-8lhe.onrender.com/api/v1/order/create',
             orderData,
             {
                 headers: {
@@ -1179,7 +1179,7 @@ const handleSubmit = async (e) => {
                     localStorage.setItem('lastOrderId', newOrderId);
                     
                     const paymentResponse = await axios.post(
-                        'http://localhost:5000/api/v1/payment/initiate',
+                        'https://ecommerce-8lhe.onrender.com/api/v1/payment/initiate',
                         {
                             orderId: newOrderId,
                             total: finalTotal,

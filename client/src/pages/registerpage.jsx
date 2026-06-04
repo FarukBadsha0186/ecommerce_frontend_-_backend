@@ -96,7 +96,7 @@ const RegisterPage = () => {
         
         // Make API call to your backend
         const response = await axios.post(
-          'http://localhost:5000/api/v1/user-register',
+          'https://ecommerce-8lhe.onrender.com/api/v1/user-register',
           registrationData,
           {
             headers: {

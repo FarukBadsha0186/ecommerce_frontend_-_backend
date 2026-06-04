@@ -152,7 +152,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/v1/cart/Read', {
+      const response = await axios.get('https://ecommerce-8lhe.onrender.com/api/v1/cart/Read', {
         headers: {
           'Authorization': `Bearer ${token}`,
           //'_id': user_id
@@ -221,7 +221,7 @@ export const CartProvider = ({ children }) => {
           quantity: parseInt(quantity)
         };
 
-        const response = await axios.post('http://localhost:5000/api/v1/cart/Create', cartData, {
+        const response = await axios.post('https://ecommerce-8lhe.onrender.com/api/v1/cart/Create', cartData, {
           headers: {
             'Authorization': `Bearer ${token}`,
             '_id': user_id,
@@ -285,7 +285,7 @@ export const CartProvider = ({ children }) => {
       try {
         setLoading(true);
         
-        const response = await axios.post('http://localhost:5000/api/v1/cart/Create', {
+        const response = await axios.post('https://ecommerce-8lhe.onrender.com/api/v1/cart/Create', {
           product_id: item._id || item.id,
           product_name: item.name,
           colour: item.colour || 'Default',
@@ -329,7 +329,7 @@ export const CartProvider = ({ children }) => {
       try {
         setLoading(true);
         
-        const response = await axios.post('http://localhost:5000/api/v1/cart/Create', {
+        const response = await axios.post('https://ecommerce-8lhe.onrender.com/api/v1/cart/Create', {
           product_id: item._id || item.id,
           product_name: item.name,
           colour: item.colour || 'Default',

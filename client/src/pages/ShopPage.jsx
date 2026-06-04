@@ -45,7 +45,7 @@ const ShopPage = () => {
         // params.append('category_id', selectedCategory);
       }
       
-      const response = await axios.get(`http://localhost:5000/api/v1/user/all_product/?${params.toString()}`, {
+      const response = await axios.get(`https://ecommerce-8lhe.onrender.com/api/v1/user/all_product/?${params.toString()}`, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': token ? `Bearer ${token}` : ''

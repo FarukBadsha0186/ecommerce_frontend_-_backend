@@ -19,7 +19,7 @@ const ProductDetailPage = () => {
   const fetchProductDetails = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/api/v1/single_product/${id}`);
+      const response = await axios.get(`https://ecommerce-8lhe.onrender.com/api/v1/single_product/${id}`);
       
       console.log('Product details:', response.data);
       

@@ -20,7 +20,7 @@ const HomePage = () => {
       const token = localStorage.getItem('token');
       
       // API থেকে প্রোডাক্ট আনুন
-      const response = await axios.get('http://localhost:5000/api/v1/user/all_product/?page_no=1&per_page=4', {
+      const response = await axios.get('https://ecommerce-8lhe.onrender.com/api/v1/user/all_product/?page_no=1&per_page=4', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': token ? `Bearer ${token}` : ''

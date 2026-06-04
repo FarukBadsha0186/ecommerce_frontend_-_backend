@@ -33,7 +33,7 @@
 // //       try {
 // //         setLoading(true);
         
-// //         const response = await axios.get(`http://localhost:5000/api/v1/public/product/${id}`);
+// //         const response = await axios.get(`https://ecommerce-8lhe.onrender.com/api/v1/public/product/${id}`);
         
 // //         console.log('API Response:', response.data);
         
@@ -427,7 +427,7 @@
 //       try {
 //         setLoading(true);
         
-//         const response = await axios.get(`http://localhost:5000/api/v1/public/product/${id}`);
+//         const response = await axios.get(`https://ecommerce-8lhe.onrender.com/api/v1/public/product/${id}`);
         
 //         console.log('API Response:', response.data);
         
@@ -856,7 +856,7 @@ const ProductDetailPage = () => {
       try {
         setLoading(true);
         
-        const response = await axios.get(`http://localhost:5000/api/v1/public/product/${id}`);
+        const response = await axios.get(`https://ecommerce-8lhe.onrender.com/api/v1/public/product/${id}`);
         
         console.log('API Response:', response.data);
         
@@ -955,7 +955,7 @@ const ProductDetailPage = () => {
       
       // সরাসরি API call
       const response = await axios.post(
-        'http://localhost:5000/api/v1/cart/Create',
+        'https://ecommerce-8lhe.onrender.com/api/v1/cart/Create',
         cartData,
         {
           headers: {

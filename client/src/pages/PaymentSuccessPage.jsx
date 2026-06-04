@@ -16,7 +16,7 @@ const PaymentSuccessPage = () => {
 
   const fetchOrderDetails = async () => {
     const token = localStorage.getItem('token');
-    const response = await axios.get(`http://localhost:5000/api/v1/order/${orderId}`, {
+    const response = await axios.get(`https://ecommerce-8lhe.onrender.com/api/v1/order/${orderId}`, {
       headers: { 'Authorization': `Bearer ${token}` }
     });
     setOrder(response.data.order);

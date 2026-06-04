@@ -206,7 +206,7 @@
 
 //   //     const response = await axios({
 //   //       method: 'post',
-//   //       url: 'http://localhost:5000/api/v1/user-login',
+//   //       url: 'https://ecommerce-8lhe.onrender.com/api/v1/user-login',
 //   //       data: {
 //   //         email: email,
 //   //         password: password
@@ -258,7 +258,7 @@
 
 //     const response = await axios({
 //       method: 'post',
-//       url: 'http://localhost:5000/api/v1/user-login',
+//       url: 'https://ecommerce-8lhe.onrender.com/api/v1/user-login',
 //       data: {
 //         email: email,
 //         password: password
@@ -382,7 +382,7 @@ const LoginPage = () => {
 
       const response = await axios({
         method: 'post',
-        url: 'http://localhost:5000/api/v1/user-login',
+        url: 'https://ecommerce-8lhe.onrender.com/api/v1/user-login',
         data: {
           email: email,
           password: password
