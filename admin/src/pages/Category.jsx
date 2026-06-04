@@ -42,6 +42,18 @@ function Category() {
     setEditName("");
   };
 
+  const useGuestCheck = () => {
+  const isGuest = localStorage.getItem('isGuest') === 'true';
+  const guestAlert = () => {
+    if (isGuest) {
+      alert('🔒 Demo Mode! This feature is for admin only!');
+      return true;
+    }
+    return false;
+  };
+  return { isGuest, guestAlert };
+};
+
   return (
     <div className="p-6 text-white">
       <h1 className="text-3xl font-bold mb-6 text-blue-400">Categories</h1>

@@ -3,6 +3,18 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../config/api";
 
+const useGuestCheck = () => {
+  const isGuest = localStorage.getItem('isGuest') === 'true';
+  const guestAlert = () => {
+    if (isGuest) {
+      alert('🔒 Demo Mode! This feature is for admin only!');
+      return true;
+    }
+    return false;
+  };
+  return { isGuest, guestAlert };
+};
+
 function Orders() {
   const navigate = useNavigate();
   const [orders, setOrders] = useState([]);

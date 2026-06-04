@@ -89,6 +89,20 @@ const Logout = () => {
 
     handleLogout();
   }, []);
+const useGuestCheck = () => {
+  const isGuest = localStorage.getItem('isGuest') === 'true';
+  const guestAlert = () => {
+    if (isGuest) {
+      alert('🔒 Demo Mode! This feature is for admin only!');
+      return true;
+    }
+    return false;
+  };
+  return { isGuest, guestAlert };
+};
+
+
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 flex items-center justify-center">

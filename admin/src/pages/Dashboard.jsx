@@ -28,21 +28,22 @@ function Dashboard() {
   //   fetchDashboardStats();
   // }, []);
 
-  useEffect(() => {
+useEffect(() => {
     const token = localStorage.getItem('adminToken');
     if (!token) {
         navigate('/login');
         return;
     }
     
-    // ✅ Guest হলে API call করবে না
+    // Guest হলে API call করবে না
     if (token === 'guest_demo') {
         setLoading(false);
         return;
     }
     
     fetchDashboardStats();
-}, []);
+}, [fetchDashboardStats]);
+  // ✅ dependency add করো
   const fetchDashboardStats = async () => {
     try {
       setLoading(true);
