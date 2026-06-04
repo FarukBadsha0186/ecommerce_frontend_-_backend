@@ -5,17 +5,7 @@ import api from "../config/api";
 
 // লোকাল প্লেসহোল্ডার ইমেজ (Base64 SVG)
 const DEFAULT_IMAGE = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3E%3Crect width='300' height='200' fill='%23374151'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' fill='%239CA3AF' dy='.3em'%3ENo Image%3C/text%3E%3C/svg%3E";
-const useGuestCheck = () => {
-  const isGuest = localStorage.getItem('isGuest') === 'true';
-  const guestAlert = () => {
-    if (isGuest) {
-      alert('🔒 Demo Mode! This feature is for admin only!');
-      return true;
-    }
-    return false;
-  };
-  return { isGuest, guestAlert };
-};
+
 
 
 

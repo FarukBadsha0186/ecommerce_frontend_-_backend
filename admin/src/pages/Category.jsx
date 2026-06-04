@@ -42,17 +42,7 @@ function Category() {
     setEditName("");
   };
 
-  const useGuestCheck = () => {
-  const isGuest = localStorage.getItem('isGuest') === 'true';
-  const guestAlert = () => {
-    if (isGuest) {
-      alert('🔒 Demo Mode! This feature is for admin only!');
-      return true;
-    }
-    return false;
-  };
-  return { isGuest, guestAlert };
-};
+  
 
   return (
     <div className="p-6 text-white">

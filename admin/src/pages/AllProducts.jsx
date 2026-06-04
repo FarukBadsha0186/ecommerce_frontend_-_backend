@@ -34,25 +34,9 @@ function AllProducts() {
   const [selectedRemark, setSelectedRemark] = useState("");
   const [deletingId, setDeletingId] = useState(null);
 
-  // useEffect(() => {
-  //   fetchProducts();
-  // }, [pageNo, perPage]);
-
-    useEffect(() => {
-    const token = localStorage.getItem('adminToken');
-    if (!token) {
-        navigate('/login');
-        return;
-    }
-    
-    // ✅ Guest হলে API call করবে না
-    if (token === 'guest_demo') {
-        setLoading(false);
-        return;
-    }
-    
-    fetchDashboardStats();
-}, []);
+  useEffect(() => {
+    fetchProducts();
+  }, [pageNo, perPage]);
 
   const fetchProducts = async () => {
     setLoading(true);
