@@ -28,8 +28,11 @@ api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
-      localStorage.removeItem('adminToken');
-      window.location.href = '/login';
+      const isGuest = localStorage.getItem('isGuest') === 'true';
+      if (!isGuest) {  // ✅ Guest হলে redirect করবে না
+        localStorage.removeItem('adminToken');
+        window.location.href = '/login';
+      }
     }
     return Promise.reject(error);
   }
