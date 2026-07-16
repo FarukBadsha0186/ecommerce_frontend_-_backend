@@ -62,50 +62,55 @@ A complete **MERN Stack** e-commerce platform with **User Frontend**, **Admin Pa
 ---
 
 ## 📁 Project Structure
+## 📁 Project Structure
+
+```
 project-root/
 │
 ├── backend/
-│ ├── src/
-│ │ ├── config/ # DB & env config
-│ │ ├── controllers/ # Business logic
-│ │ ├── middleware/ # Auth, error handling
-│ │ ├── models/ # Mongoose models
-│ │ ├── routes/ # API routes
-│ │ ├── services/ # Cloudinary, SSLCommerz
-│ │ ├── uploads/ # Local file storage
-│ │ └── utility/ # Helper functions
-│ ├── .env
-│ └── package.json
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── uploads/
+│   │   └── utility/
+│   ├── .env
+│   └── package.json
 │
 ├── frontend/
-│ ├── src/
-│ │ ├── components/ # Reusable components
-│ │ │ ├── cart/
-│ │ │ ├── common/
-│ │ │ ├── home/
-│ │ │ ├── layout/
-│ │ │ └── products/
-│ │ ├── pages/ # Page components
-│ │ ├── context/ # Context API
-│ │ ├── routes/ # Route definitions
-│ │ ├── services/ # API service calls
-│ │ └── assets/ # Images, fonts
-│ ├── public/
-│ └── package.json
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── cart/
+│   │   │   ├── common/
+│   │   │   ├── home/
+│   │   │   ├── layout/
+│   │   │   └── products/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── assets/
+│   ├── public/
+│   └── package.json
 │
 ├── admin-panel/
-│ ├── src/
-│ │ ├── components/ # Admin components
-│ │ │ ├── dashboard/
-│ │ │ ├── products/
-│ │ │ ├── orders/
-│ │ │ └── users/
-│ │ ├── pages/ # Admin pages
-│ │ ├── context/ # Admin context
-│ │ ├── routes/ # Admin routes
-│ │ └── services/ # API calls
-│ └── package.json
-
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── dashboard/
+│   │   │   ├── products/
+│   │   │   ├── orders/
+│   │   │   └── users/
+│   │   ├── pages/
+│   │   ├── context/
+│   │   ├── routes/
+│   │   └── services/
+│   └── package.json
+│
+└── README.md
+```
 
 ## ⚙️ Installation & Setup
 
